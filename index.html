@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            font-size: 1.5rem;
+        }
+        .navbar .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+        .navbar .links a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            margin-top: 70px;
+            flex: 1;
+        }
+        .left-menu {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .left-menu.collapsed {
+            width: 60px;
+            padding: 10px;
+        }
+        .left-menu .menu-item {
+            margin-bottom: 15px;
+        }
+        .left-menu .menu-item a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+        }
+        .left-menu .menu-item a:hover {
+            color: #007BFF;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .main-content h2 {
+            margin-bottom: 15px;
+        }
+        .right-panel {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #e09b9b;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+        .toggle-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+        .personal-info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #eef;
+            border-left: 4px solid #007BFF;
+        }
+        .personal-info a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .personal-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>ENFUND.IO </h1>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="left-menu" id="left-menu">
+            <button class="toggle-btn" onclick="toggleMenu()">Toggle Menu</button>
+            <div class="menu-item"><a href="#">Dashboard</a></div>
+            <div class="menu-item"><a href="#">Profile</a></div>
+            <div class="menu-item"><a href="#">Settings</a></div>
+            <div class="menu-item"><a href="#">Help</a></div>
+        </div>
+
+        <div class="main-content">
+            <h2>Welcome to My Website</h2>
+
+            <img src="image.png" alt="A description of the image" width="300" height="200" />
+
+
+            <p>This is the main content area where you can add your articles, blog posts, or other information.</p>
+            <p>Here, you might want to display your recent updates, news, or a gallery of images.</p>
+
+            <div class="personal-info">
+                <h3>About Me</h3>
+                <p>Hi, I am Kharosekar Varadraj Abhay, a passionate web developer with expertise in Django, Python, AWS, and more. My portfolio showcases a variety of projects highlighting my skills and dedication to creating efficient and user-friendly applications.</p>
+                <p>For more details, check out my <a href="https://drive.google.com/file/d/1TNADrQuUEssJx5Ejm8fcaSKdMaH0joQ4">Resume</a>.</p>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h3>Notifications</h3>
+            <p>You have 3 new messages.</p>
+            <p>Remember to update your profile for better recommendations.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 My Website For Assignment of Enfund </p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('left-menu');
+            menu.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
